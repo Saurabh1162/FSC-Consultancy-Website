@@ -28,7 +28,9 @@
     - preload images
   -->
   <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  
 
+  
 </head>
 
 <body id="top">
@@ -82,7 +84,7 @@
         <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
       </button>
 
-      <a href="#" class="btn btn-primary has-before has-after">Let’s Talk 👋</a>
+      <a href="#contact" class="btn btn-primary has-before has-after">Let’s Talk 👋</a>
 
       <div class="overlay" data-nav-toggler data-overlay></div>
 
@@ -341,7 +343,9 @@
     display: flex;
     justify-content: center;
   align-items: center;
-    margin-bottom: 20px;
+  height: 50px; /* Adjust as needed to define the container size */
+  width: 50px; /* Adjust as needed to define the container size */
+  margin: 0 auto;
   }
   
   .card-title {
@@ -531,7 +535,7 @@
   
         <!-- Scene Card 3 -->
         <div class="scene-card">
-          <ion-icon name="shield-checkmark" class="card-icon color-3"></ion-icon>
+          <ion-icon name="shield-checkmark" class="card-icon color-3"aria-label="Quality Assurance"></ion-icon>
           <h3 class="card-title">Quality Assurance</h3>
           <ul class="card-list">
             <li><ion-icon name="checkbox" class="color-3"></ion-icon> Unit Testing</li>
@@ -604,7 +608,7 @@
                   </div>
 
                   <div>
-                    <h3 class="h3 card-title">Didicated team</h3>
+                    <h3 class="h3 card-title">Dedicated Team</h3>
 
                     <p class="card-text">
                       At Full Stack Consultancy we specialize in designing, building, shipping and scaling beautifu.
@@ -660,14 +664,6 @@
 
             <li>
               <button class="filter-btn active" data-filter-btn>Website</button>
-            </li>
-
-            <li>
-              <button class="filter-btn" data-filter-btn>Landing Page</button>
-            </li>
-
-            <li>
-              <button class="filter-btn" data-filter-btn>iOS App</button>
             </li>
 
             <li>
@@ -820,13 +816,258 @@
         </div>
       </section>
 
-
-
-
-
+      <section class="section contact" id="contact" aria-label="contact">
+        <div class="container">
+          <p class="section-subtitle has-before text-center">Let's Talk</p>
+          <h2 class="h2 section-title text-center">
+            Got a project in <span class="has-before">mind?</span>
+          </h2>
+      
+          <div class="card contact-card">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+              <input type="hidden" name="access_key" value="f2ff5694-ed06-44fe-a01b-f1b2ee1e1499">
+              <div class="input-wrapper">
+                <input type="text" name="name" placeholder="Your Name *" required class="input-field">
+                <input type="email" name="email" placeholder="Your Email *" required class="input-field">
+              </div>
+      
+              <input type="text" name="subject" placeholder="Subject *" required class="input-field">
+              
+              <textarea name="message" placeholder="Your Message *" required class="input-field" rows="6"></textarea>
+      
+              <button type="submit" class="btn btn-primary has-before has-after">
+                <span class="span">Send Message</span>
+                <ion-icon name="paper-plane-outline" aria-hidden="true"></ion-icon>
+              </button>
+            </form>
+          </div>
+      
+          <ul class="grid-list">
+            <li>
+              <div class="contact-card service-card" style="--color: 241, 77%, 63%;">
+                <div class="card-icon">
+                  <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+                </div>
+      
+                <h3 class="h3 card-title">Office Address</h3>
+                <p class="card-text">
+                  123 Business Avenue, Suite 100<br>
+                  New York, NY 10001
+                </p>
+              </div>
+            </li>
+      
+            <li>
+              <div class="contact-card service-card" style="--color: 343, 98%, 60%;">
+                <div class="card-icon">
+                  <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+                </div>
+      
+                <h3 class="h3 card-title">Phone Number</h3>
+                <p class="card-text">
+                  +1 (555) 123-4567<br>
+                  +1 (555) 987-6543
+                </p>
+              </div>
+            </li>
+      
+            <li>
+              <div class="contact-card service-card" style="--color: 174, 77%, 50%;">
+                <div class="card-icon">
+                  <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+                </div>
+      
+                <h3 class="h3 card-title">Email Address</h3>
+                <p class="card-text">
+                  info@fullstackconsultancy.com<br>
+                  support@fullstackconsultancy.com
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      
+      <style>
+      /* Base styles */
+      .contact .card.contact-card {
+        max-width: 800px;
+        margin: 60px auto;
+        background: var(--white);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: var(--shadow-1);
+      }
+      
+      .contact .input-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .contact .input-field {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid #e1e1e1;
+        border-radius: 8px;
+        font-size: var(--fs-7);
+        color: var(--independence);
+        transition: all 0.3s ease;
+        background: transparent;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+      }
+      
+      .contact textarea.input-field {
+        resize: vertical;
+        min-height: 120px;
+        margin-bottom: 30px;
+      }
+      
+      .contact .input-field:hover {
+        border-color: #d0d0d0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      }
+      
+      .contact .input-field:focus {
+        outline: none;
+        border-color: hsl(var(--accent));
+        box-shadow: 0 0 0 4px hsla(var(--accent), 0.1);
+      }
+      
+      .contact .btn {
+        margin: 0 auto;
+        display: block;
+      }
+      
+      .contact .grid-list {
+        margin-block: 60px;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .contact .service-card {
+        padding: 30px;
+        text-align: center;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+      }
+      
+      .contact-card .card-icon {
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+      
+      .contact .service-card:hover {
+        border-color: hsl(var(--color));
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px hsla(var(--color), 0.1);
+      }
+      
+      /* Responsive Breakpoints */
+      
+      /* Tablet and Smaller Desktop */
+      @media (max-width: 1024px) {
+        .contact .card.contact-card {
+          max-width: 90%;
+          padding: 30px;
+        }
+      
+        .contact .grid-list {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+      }
+      
+      /* Tablet Portrait */
+      @media (max-width: 768px) {
+        .contact .input-wrapper {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+      
+        .contact .grid-list {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+      
+        .contact .service-card {
+          padding: 20px;
+        }
+      
+        .contact .card-text {
+          font-size: 14px;
+        }
+      }
+      
+      /* Mobile */
+      @media (max-width: 580px) {
+        .contact .card.contact-card {
+          padding: 20px;
+          margin: 30px auto;
+        }
+      
+        .contact .grid-list {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+      
+        .contact .input-field {
+          padding: 10px 14px;
+          font-size: 14px;
+        }
+      
+        .contact .btn {
+          width: 100%;
+        }
+      
+        .contact .section-title {
+          font-size: 24px;
+        }
+      
+        .contact .card-title {
+          font-size: 18px;
+        }
+      }
+      
+      /* Support for smaller phones */
+      @media (max-width: 380px) {
+        .contact .card.contact-card {
+          padding: 15px;
+        }
+      
+        .contact .service-card {
+          padding: 15px;
+        }
+      
+        .contact .card-icon {
+          font-size: 20px;
+        }
+      }
+      
+      /* Handle landscape orientation */
+      @media (max-height: 600px) and (orientation: landscape) {
+        .contact .card.contact-card {
+          margin: 20px auto;
+        }
+      
+        .contact textarea.input-field {
+          min-height: 80px;
+        }
+      }
+      
+      /* High-DPI screens */
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .contact .input-field {
+          border-width: 1px;
+        }
+      }
+      </style>
       <!-- 
         - #BLOG
-      -->
+      
 
       <section class="section blog" id="blog" aria-label="blog">
         <div class="container">
@@ -969,7 +1210,7 @@
     </article>
   </main>
 
-
+-->
 
 
 
@@ -987,7 +1228,7 @@
           <p class="footer-list-title">About Full Stack Consultancy</p>
 
           <p class="footer-text">
-            A new way to make the payments easy, reliable and 100% secure. claritatem itamconse quat. Exerci tationulla
+            Simplifying technology to empower your business. We deliver innovative, secure, and seamless solutions to drive success in the digital world.
           </p>
 
           <ul class="social-list">
