@@ -116,7 +116,7 @@
             </p>
 
             <div class="wrapper">
-              <a href="#" class="btn btn-primary has-before has-after">How It Works</a>
+              <a href="#process" class="btn btn-primary has-before has-after">How It Works</a>
 
               <button class="hero-btn" aria-label="Full Stack Consultancy promo">
                 <ion-icon name="play-outline" aria-hidden="true"></ion-icon>
@@ -298,9 +298,263 @@
         </div>
       </section>
 
-
-
-
+ <!-- Add this to your existing CSS file -->
+<style>
+  /* Base styles */
+  .process-section,
+  .behind-scenes-section {
+    padding: 60px 0;
+  }
+  
+  .grid-container {
+    display: grid;
+    gap: 30px;
+    padding: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .process-card,
+  .scene-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .process-card:hover,
+  .scene-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .card-number {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .card-icon {
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+  align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .card-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .card-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .card-list li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Color variations */
+  .color-1 { color: #4CAF50; }
+  .color-2 { color: #2196F3; }
+  .color-3 { color: #FF9800; }
+  .color-4 { color: #9C27B0; }
+  
+  /* Responsive Breakpoints */
+  /* Large Tablets */
+  @media screen and (max-width: 1024px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 15px;
+    }
+  
+    .process-card,
+    .scene-card {
+      padding: 25px;
+    }
+  
+    .card-number,
+    .card-icon {
+      font-size: 40px;
+    }
+  
+    .card-title {
+      font-size: 20px;
+    }
+  }
+  
+  /* Small Tablets */
+  @media screen and (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  
+    .process-section,
+    .behind-scenes-section {
+      padding: 40px 0;
+    }
+  }
+  
+  /* Mobile Phones */
+  @media screen and (max-width: 480px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .process-card,
+    .scene-card {
+      padding: 20px;
+    }
+  
+    .card-number,
+    .card-icon {
+      font-size: 36px;
+      display: flex;
+      justify-content: center;
+  align-items: center;
+    }
+  
+    .card-title {
+      font-size: 18px;
+    }
+  
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  }
+  </style>
+  
+  <!-- Updated HTML Structure -->
+  <!-- How It Works Section -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-subtitle has-before text-center">How It Works</p>
+        <h2 class="h2 section-title text-center">Our Step-by-Step <span class="has-before">Approach</span></h2>
+      </div>
+  
+      <div class="grid-container">
+        <!-- Process Card 1 -->
+        <div class="process-card">
+          <div class="card-number color-1">01</div>
+          <h3 class="card-title">Discovery Phase</h3>
+          <ul class="card-list">
+            <li><ion-icon name="checkmark-circle" class="color-1"></ion-icon> Initial Consultation</li>
+            <li><ion-icon name="checkmark-circle" class="color-1"></ion-icon> Requirement Analysis</li>
+            <li><ion-icon name="checkmark-circle" class="color-1"></ion-icon> Technical Assessment</li>
+            <li><ion-icon name="checkmark-circle" class="color-1"></ion-icon> Goal Definition</li>
+          </ul>
+        </div>
+  
+        <!-- Process Card 2 -->
+        <div class="process-card">
+          <div class="card-number color-2">02</div>
+          <h3 class="card-title">Planning Stage</h3>
+          <ul class="card-list">
+            <li><ion-icon name="checkmark-circle" class="color-2"></ion-icon> Solution Design</li>
+            <li><ion-icon name="checkmark-circle" class="color-2"></ion-icon> Resource Allocation</li>
+            <li><ion-icon name="checkmark-circle" class="color-2"></ion-icon> Timeline Creation</li>
+            <li><ion-icon name="checkmark-circle" class="color-2"></ion-icon> Risk Assessment</li>
+          </ul>
+        </div>
+  
+        <!-- Process Card 3 -->
+        <div class="process-card">
+          <div class="card-number color-3">03</div>
+          <h3 class="card-title">Development</h3>
+          <ul class="card-list">
+            <li><ion-icon name="checkmark-circle" class="color-3"></ion-icon> Agile Sprints</li>
+            <li><ion-icon name="checkmark-circle" class="color-3"></ion-icon> Regular Updates</li>
+            <li><ion-icon name="checkmark-circle" class="color-3"></ion-icon> Quality Testing</li>
+            <li><ion-icon name="checkmark-circle" class="color-3"></ion-icon> Progress Tracking</li>
+          </ul>
+        </div>
+  
+        <!-- Process Card 4 -->
+        <div class="process-card">
+          <div class="card-number color-4">04</div>
+          <h3 class="card-title">Deployment</h3>
+          <ul class="card-list">
+            <li><ion-icon name="checkmark-circle" class="color-4"></ion-icon> System Launch</li>
+            <li><ion-icon name="checkmark-circle" class="color-4"></ion-icon> Team Training</li>
+            <li><ion-icon name="checkmark-circle" class="color-4"></ion-icon> Monitoring</li>
+            <li><ion-icon name="checkmark-circle" class="color-4"></ion-icon> Support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Behind the Scenes Section -->
+  <section class="behind-scenes-section" id="behind-scenes">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-subtitle has-before text-center">Behind the Scenes</p>
+        <h2 class="h2 section-title text-center">Our <span class="has-before">Working Process</span></h2>
+      </div>
+  
+      <div class="grid-container">
+        <!-- Scene Card 1 -->
+        <div class="scene-card">
+          <ion-icon name="people" class="card-icon color-1 "></ion-icon>
+          <h3 class="card-title">Expert Teams</h3>
+          <ul class="card-list">
+            <li><ion-icon name="person" class="color-1"></ion-icon> Solution Architects</li>
+            <li><ion-icon name="person" class="color-1"></ion-icon> Developers</li>
+            <li><ion-icon name="person" class="color-1"></ion-icon> UX Designers</li>
+            <li><ion-icon name="person" class="color-1"></ion-icon> QA Engineers</li>
+          </ul>
+        </div>
+  
+        <!-- Scene Card 2 -->
+        <div class="scene-card">
+          <ion-icon name="code-slash" class="card-icon color-2"></ion-icon>
+          <h3 class="card-title">Development</h3>
+          <ul class="card-list">
+            <li><ion-icon name="git-branch" class="color-2"></ion-icon> Agile Methods</li>
+            <li><ion-icon name="git-branch" class="color-2"></ion-icon> CI/CD Pipeline</li>
+            <li><ion-icon name="git-branch" class="color-2"></ion-icon> Code Reviews</li>
+            <li><ion-icon name="git-branch" class="color-2"></ion-icon> Version Control</li>
+          </ul>
+        </div>
+  
+        <!-- Scene Card 3 -->
+        <div class="scene-card">
+          <ion-icon name="shield-checkmark" class="card-icon color-3"></ion-icon>
+          <h3 class="card-title">Quality Assurance</h3>
+          <ul class="card-list">
+            <li><ion-icon name="checkbox" class="color-3"></ion-icon> Unit Testing</li>
+            <li><ion-icon name="checkbox" class="color-3"></ion-icon> Integration Tests</li>
+            <li><ion-icon name="checkbox" class="color-3"></ion-icon> Performance Tests</li>
+            <li><ion-icon name="checkbox" class="color-3"></ion-icon> Security Checks</li>
+          </ul>
+        </div>
+  
+        <!-- Scene Card 4 -->
+        <div class="scene-card">
+          <ion-icon name="trending-up" class="card-icon color-4"></ion-icon>
+          <h3 class="card-title">Management</h3>
+          <ul class="card-list">
+            <li><ion-icon name="analytics" class="color-4"></ion-icon> Daily Stand-ups</li>
+            <li><ion-icon name="analytics" class="color-4"></ion-icon> Sprint Planning</li>
+            <li><ion-icon name="analytics" class="color-4"></ion-icon> Progress Tracking</li>
+            <li><ion-icon name="analytics" class="color-4"></ion-icon> Reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
       <!-- 
         - #FEATURE
