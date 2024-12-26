@@ -38,7 +38,7 @@
   <!-- 
     - #HEADER
   -->
-
+ 
   <header class="header" data-header>
     <div class="container">
 
@@ -89,10 +89,7 @@
       <div class="overlay" data-nav-toggler data-overlay></div>
 
     </div>
-  </header>
-
-
-
+  </header> 
 
 
   <main>
@@ -121,16 +118,16 @@
               <a href="#process" class="btn btn-primary has-before has-after">How It Works</a>
 
               <button class="hero-btn" aria-label="Full Stack Consultancy promo">
-                <ion-icon name="play-outline" aria-hidden="true"></ion-icon>
+                
 
-                <span class="span">Behind the scenes</span>
+                <span class="btn btn-primary has-before has-after"><ion-icon name="play-outline" aria-hidden="true"></ion-icon>Behind the scenes</span>
               </button>
             </div>
 
             <ul class="social-list">
 
               <li>
-                <a href="https://www.facebook.com/profile.php?id=61566624107202" class="social-link" style="--color: hsl(241, 77%, 63%);">
+                <a href="https://www.facebook.com/profile.php?id=61566624107202" class="social-link" style="--color: hsl(241, 77%, 63%);" aria-label="Visit our Facebook Page" target="_blank" rel="noopener noreferrer">
                   <ion-icon name="logo-facebook"></ion-icon>
 
                   <span class="span">Facebook</span>
@@ -138,7 +135,7 @@
               </li>
 
               <li>
-                <a href="https://www.youtube.com/@SyntaxZen" class="social-link" style="--color: hsl(0, 100%, 50%);">
+                <a href="https://www.youtube.com/@SyntaxZen" class="social-link" style="--color: hsl(0, 100%, 50%);" aria-label="Visit our YouTube channel" target="_blank" rel="noopener noreferrer">
                   <ion-icon name="logo-youtube"></ion-icon>
 
                   <span class="span">Youtube</span>
@@ -146,7 +143,7 @@
               </li>
 
               <li>
-                <a href="https://www.instagram.com/fsc_pvt/?__pwa=1#" class="social-link" style="--color: hsl(339, 97%, 41%);">
+                <a href="https://www.instagram.com/fsc_pvt/?__pwa=1#" class="social-link" style="--color: hsl(339, 97%, 41%);" aria-label="Visit our Instagram Page" target="_blank" rel="noopener noreferrer">
                   <ion-icon name="logo-instagram"></ion-icon>
               
                   <span class="span">Instagram</span>
@@ -692,7 +689,7 @@
                     Agency Website
                   </h3>
 
-                  <a href="https://fsc-consultancy-website.vercel.app/" class="card-tag">Live Demo</a>
+                  <a href="https://fsc-consultancy-website.vercel.app/" class="card-tag"  target="_blank">Live Demo</a>
                 </div>
 
               </div>
@@ -711,7 +708,7 @@
                     Hotel Website
                   </h3>
 
-                  <a href="https://hotelharshaliresidency.com/" class="card-tag">Live Demo</a>
+                  <a href="https://hotelharshaliresidency.com/" class="card-tag"  target="_blank">Live Demo</a>
                 </div>
 
               </div>
@@ -730,7 +727,7 @@
                     Countries Info
                   </h3>
 
-                  <a href="https://countries-api-proj.vercel.app/" class="card-tag">Live Demo</a>
+                  <a href="https://countries-api-proj.vercel.app/" class="card-tag"  target="_blank">Live Demo</a>
                 </div>
 
               </div>
@@ -749,11 +746,11 @@
                     <a href="https://fsc-consultancy-website.vercel.app/" class="card-title">FSC Official Web</a>
                   </h3>
 
-                  <!-- <a href="#" class="card-tag">Design</a> -->
-                </div>
+                <a href="#" class="card-tag">Design</a> -->
+                <!-- </div>
 
               </div>
-            </li> -->
+            </li>  -->
 
             <!-- <li>
               <div class="project-card">
@@ -824,8 +821,8 @@
             Got a project in <span class="has-before">mind?</span>
           </h2>
       
-          <div class="card contact-card">
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+          <!-- <div class="card contact-card">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" onsubmit="clearForm(event)">
               <input type="hidden" name="access_key" value="f2ff5694-ed06-44fe-a01b-f1b2ee1e1499">
               <div class="input-wrapper">
                 <input type="text" name="name" placeholder="Your Name *" required class="input-field">
@@ -842,7 +839,48 @@
               </button>
             </form>
           </div>
-      
+          <script>
+            function clearForm(event) {
+              event.preventDefault(); // Prevent default form submission
+              // Handle form submission logic here
+              document.getElementById("myForm").reset(); // Reset the form fields
+            }
+          </script> -->
+
+          
+
+          <div class="card contact-card">
+            <form id="myForm" action="https://api.web3forms.com/submit" method="POST" class="contact-form" onsubmit="clearForm()">
+              <input type="hidden" name="access_key" value="f2ff5694-ed06-44fe-a01b-f1b2ee1e1499">
+              
+              <div class="input-wrapper">
+                <input type="text" name="name" placeholder="Your Name *" required class="input-field">
+                <input type="email" name="email" placeholder="Your Email *" required class="input-field">
+              </div>
+          
+              <input type="text" name="subject" placeholder="Subject *" required class="input-field">
+              <textarea name="message" placeholder="Your Message *" required class="input-field" rows="6"></textarea>
+          
+              <button type="submit" class="btn btn-primary has-before has-after">
+                <span class="span">Send Message</span>
+                <ion-icon name="paper-plane-outline" aria-hidden="true"></ion-icon>
+              </button>
+            </form>
+          </div>
+          
+          <script>
+            function clearForm() {
+              // Clear the form fields
+              setTimeout(() => {
+                document.getElementById("myForm").reset();
+              }, 500); // Add a slight delay to ensure the form submission completes
+            }
+          </script>
+          
+
+        
+
+
           <ul class="grid-list">
             <li>
               <div class="contact-card service-card" style="--color: 241, 77%, 63%;">
@@ -1235,19 +1273,20 @@
           <ul class="social-list">
 
             <li>
-              <a href="https://www.youtube.com/@SyntaxZen" class="social-link">
+              <a href="https://www.youtube.com/@SyntaxZen" class="social-link" aria-label="Visit our YouTube channel" target="_blank" rel="noopener noreferrer">
                 <ion-icon name="logo-youtube"></ion-icon>
               </a>
             </li>
+            
 
             <li>
-              <a href="https://www.instagram.com/fsc_pvt/?__pwa=1#" class="social-link">
+              <a href="https://www.instagram.com/fsc_pvt/?__pwa=1#" class="social-link" aria-label="Visit our Instagram page" target="_blank" rel="noopener noreferrer">
                 <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="https://www.facebook.com/profile.php?id=61566624107202" class="social-link">
+              <a href="https://www.facebook.com/profile.php?id=61566624107202" class="social-link" aria-label="Visit our Facebook page" target="_blank" rel="noopener noreferrer">
                 <ion-icon name="logo-facebook"></ion-icon>
               </a>
             </li>
