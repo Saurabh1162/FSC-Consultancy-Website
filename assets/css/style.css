@@ -25,6 +25,8 @@
   --raisin-black-1: hsl(240, 8%, 17%);
   --raisin-black-2: hsl(240, 8%, 12%);
   --majorelle-blue: hsl(241, 77%, 63%);
+
+  --gradient-purple-blue: linear-gradient(45deg, hsl(259, 45%, 56%), hsl(211, 71%, 60%));
   --blue-ryb_80: hsla(241, 88%, 60%, 0.8);
   --bittersweet: hsl(0, 100%, 69%);
   --eerie-black: hsl(0, 0%, 13%);
@@ -178,7 +180,8 @@ body {
 
 .container { padding-inline: 15px; }
 
-.section { padding-block: var(--section-padding); }
+.section { padding-block: var(--section-padding);
+  animation: fadeIn 0.8s ease-out forwards; }
 
 .h1,
 .h2 { letter-spacing: -2px; }
@@ -236,6 +239,8 @@ body {
   border-radius: var(--radius-10);
   overflow: hidden;
   transition: var(--transition-2);
+  /* transition: transform 0.3s ease;
+  overflow: hidden; */
 }
 
 .btn::before,
@@ -533,7 +538,8 @@ body {
   padding-block-end: 40px;
   border-block-end: 3px solid transparent;
   box-shadow: var(--shadow-3);
-  transition: var(--transition-1);
+  /* transition: var(--transition-1); */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:is(:hover, :focus-within) { border-color: hsl(var(--color)); }
@@ -545,9 +551,11 @@ body {
   background-color: hsla(var(--color), 0.15);
   margin-block-end: 25px;
   transition: var(--transition-2);
+  animation: rotate 20s linear infinite;
+  animation-play-state: paused;
 }
 
-.service-card:is(:hover, :focus-within) .card-icon { transform: rotateY(0.5turn); }
+.service-card:is(:hover, :focus-within) .card-icon { transform: rotateY(0.5turn);animation-play-state: running; }
 
 .service-card .card-title { transition: var(--transition-1); }
 
@@ -600,11 +608,15 @@ body {
   border-radius: 50%;
   margin-block-end: 20px;
   transition: var(--transition-2);
+  animation: rotate 20s linear infinite;
+  animation-play-state: paused;
 }
 
 .feature-card .card-icon ion-icon {
   color: hsl(var(--color));
   transition: var(--transition-1);
+  animation: rotate 20s linear infinite;
+  animation-play-state: paused;
 }
 
 .feature-card .card-text {
@@ -615,12 +627,54 @@ body {
 
 .feature-card:is(:hover, :focus) .card-icon {
   box-shadow: inset 0 0 0 30px hsla(var(--color), 0.9);
+  animation-play-state: running;
 }
 
-.feature-card:is(:hover, :focus) .card-icon ion-icon { color: var(--white); }
+.feature-card:is(:hover, :focus) .card-icon ion-icon { color: var(--white); animation-play-state: running;}
 
 
 
+
+/* Form Button */
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.custom-btn {
+  background: linear-gradient(45deg, #4a90e2, #7e57c2);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.custom-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, #7e57c2, #4a90e2);
+}
+
+.custom-btn .icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.custom-btn:hover .icon {
+  transform: translateX(5px);
+}
+
+.custom-btn-text {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
 
 
 /*-----------------------------------*\
@@ -664,7 +718,8 @@ body {
   overflow: hidden;
 }
 
-.project-card .card-banner img { transition: var(--transition-2); }
+.project-card .card-banner img { transition: var(--transition-2); transition: transform 0.5s ease;
+ }
 
 .project-card:is(:hover, :focus-within) .card-banner img {
   transform: scale(1.1);
@@ -758,6 +813,7 @@ body {
   border-radius: var(--radius-20);
   overflow: hidden;
   margin-block-end: 20px;
+  transition: transform 0.3s ease;
 }
 
 .blog-card.large .card-banner { margin-block-end: 40px; }
@@ -772,8 +828,8 @@ body {
 
 .blog-card .card-banner img { transition: var(--transition-2); }
 
-.blog-card:is(:hover, :focus-within) .card-banner img { transform: scale(1.1); }
-
+.blog-card:is(:hover, :focus-within) .card-banner img { transform: translateX(10px);}
+/* transform: scale(1.1);  */
 .blog-card .wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -851,13 +907,16 @@ body {
   background-color: var(--onyx);
   padding: 14px;
   border-radius: 50%;
-  transition: var(--transition-1);
+  /* transition: var(--transition-1); */
+  transition: transform 0.3s ease;
 }
 
 .footer .social-link:is(:hover, :focus) {
   background-color: var(--majorelle-blue);
   color: var(--white);
+  transform: translateY(-5px) rotate(10deg);
 }
+
 
 .footer-link {
   font-size: var(--fs-8);
@@ -1043,7 +1102,9 @@ body {
 
   .container { max-width: 720px; }
 
-  .btn { height: 60px; }
+  .btn { height: 60px;
+    transition: transform 0.3s ease;
+  overflow: hidden; }
 
   .grid-list { grid-template-columns: 1fr 1fr; }
 
@@ -1182,7 +1243,9 @@ body {
 
   .container { max-width: 960px; }
 
-  .btn { height: 70px; }
+  .btn { height: 70px; 
+    transition: transform 0.3s ease;
+  overflow: hidden;}
 
   .grid-list { grid-template-columns: repeat(3, 1fr); }
 
@@ -1232,7 +1295,8 @@ body {
 
   .navbar-link:is(:hover, :focus)::before { width: 100%; }
 
-  .header .btn { display: inline-flex; }
+  .header .btn { display: inline-flex;   transition: transform 0.3s ease;
+    overflow: hidden;}
 
   .header .btn::before,
   .header .btn::after { background-color: var(--raisin-black-1); }
@@ -1258,9 +1322,13 @@ body {
   .hero .wrapper { flex-wrap: nowrap; }
 
   .hero .btn,
-  .hero-btn .span { flex-shrink: 0; }
+  .hero-btn .span { flex-shrink: 0;   transition: transform 0.3s ease;
+    overflow: hidden;}
 
-  .hero-banner { margin-inline-end: -140px; }
+  .hero-banner { 
+    margin-inline-end: -140px;
+    animation: float 4s ease-in-out infinite
+   }
 
 
 
@@ -1436,7 +1504,10 @@ body {
 
   .service .grid-list { grid-template-columns: repeat(4, 1fr); }
 
-  .service-card .h3 { --fs-3: 2rem; }
+  .service-card .h3 { 
+    --fs-3: 2rem;
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  }
 
 
 
@@ -1469,3 +1540,69 @@ body {
   .blog-card .card-title { --fs-4: 2.4rem; }
 
 }
+
+
+/* new changes  */
+
+/* Smooth fade-in animation for sections */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Floating animation for hero banner */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* Rotating icon animation */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(100px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Add these classes to your sections */
+.reveal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.reveal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Animation variations */
+.reveal-left.active {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.reveal-right.active {
+  animation: slideInRight 1s ease forwards;
+}
+
+.reveal-up.active {
+  animation: slideInUp 1s ease forwards;
+}
+
+/* Add this JavaScript to make it work */
